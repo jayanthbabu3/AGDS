@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Manrope', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    color: #111827;
+    background-color: #F8F9FA;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #111827;
+    background-color: #F8F9FA;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
+
+  /* Consistent Corporate Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #111827;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+}
+
+/* Subtle, authentic enterprise corporate shadows */
+.corporate-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.75rem; /* 12px */
+  transition: all 0.2s ease-in-out;
+}
+
+.corporate-card:hover {
+  border-color: #D1D5DB;
+  box-shadow: 0 4px 12px -2px rgba(17, 24, 39, 0.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Reference Website Visual Engine */
+@theme {
+  --color-ground: #f4f5f7;
+  --color-raised: #ffffff;
+  --color-soft: #eef0f4;
+  --color-line: #d7dae2;
+  --color-accent: #0161cf;
+  --color-accent-dim: #014ea6;
+  --color-accent-soft: #e1ecf9;
+  --color-accent-glow: #016fea;
+  --color-gold: #66a0e2;
+  --color-ink: #0b1c30;
+  --color-body: #454655;
+  --color-muted: #757687;
+  --font-display: "Archivo", "Manrope", -apple-system, sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-hand: "Caveat", cursive;
+}
+
+:root {
+  --color-ground: #f4f5f7;
+  --color-raised: #ffffff;
+  --color-soft: #eef0f4;
+  --color-line: #d7dae2;
+  --color-accent: #0161cf;
+  --color-accent-dim: #014ea6;
+  --color-accent-soft: #e1ecf9;
+  --color-accent-glow: #016fea;
+  --color-gold: #66a0e2;
+  --color-ink: #0b1c30;
+  --color-body: #454655;
+  --color-muted: #757687;
+  --font-display: "Archivo", "Manrope", -apple-system, sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-hand: "Caveat", cursive;
+}
+
+.display {
+  font-family: var(--font-display);
+  letter-spacing: -0.022em;
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+.label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.hand {
+  font-family: var(--font-hand);
+}
+
+.hero-field {
+  background-image: 
+    radial-gradient(60% 70% at 78% 40%, rgba(1, 97, 207, 0.08) 0%, transparent 70%),
+    radial-gradient(40% 50% at 10% 90%, rgba(102, 160, 226, 0.1) 0%, transparent 70%),
+    linear-gradient(165deg, #ffffff 0%, #f4f5f7 45%, #e8eaf0 100%);
+}
+
+.hero-mesh {
+  background-image: 
+    linear-gradient(to right, rgba(1, 97, 207, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(1, 97, 207, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: linear-gradient(#000 0% 55%, transparent 92%), radial-gradient(56% 64% at 68% 42%, transparent 25%, #000 82%);
+  mask-image: linear-gradient(#000 0% 55%, transparent 92%), radial-gradient(56% 64% at 68% 42%, transparent 25%, #000 82%);
+}
+
+.float-cell {
+  will-change: transform, opacity;
+  border-radius: 4px;
+  animation: 7s ease-in-out infinite cell-drift;
+  position: absolute;
+}
+
+@keyframes cell-drift {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-8px);
+  }
+}
+
+.orbit-dot {
+  animation: 2.6s ease-in-out infinite dot-pulse;
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.node-float {
+  animation: 5s ease-in-out infinite node-float;
+}
+
+@keyframes node-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.grain {
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.marquee-track {
+  animation: 35s linear infinite marquee;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ref-card,
+.card {
+  background: #ffffff;
+  border: 1px solid #d7dae2;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(11, 28, 48, 0.04), 0 10px 24px -16px rgba(1, 97, 207, 0.25);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ref-card:hover,
+.card:hover {
+  border-color: rgba(1, 97, 207, 0.4);
+  box-shadow: 0 2px 4px rgba(11, 28, 48, 0.05), 0 16px 32px -16px rgba(1, 97, 207, 0.35);
+  transform: translateY(-2px);
+}
