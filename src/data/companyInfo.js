@@ -56,7 +56,7 @@ export const companyData = {
   services: {
     eyebrow: "OUR SERVICES",
     heading: "Technology Services Built Around Your Business",
-    supportingText: "From software engineering and cloud infrastructure to artificial intelligence, cybersecurity and data, we provide practical technology solutions designed around real business requirements.",
+    supportingText: "Practical technology solutions across software, cloud, AI, security and data.",
     items: [
       {
         number: "01",
@@ -271,13 +271,9 @@ export const companyData = {
       { id: "banking", name: "Banking & Finance", desc: "Audit-ready ledgers, AML/KYC automated pipelines, and core banking API connectors." },
       { id: "retail", name: "Retail", desc: "Omnichannel inventory orchestration, POS synchronization, and customer loyalty systems." },
       { id: "ecommerce", name: "E-commerce", desc: "Headless commerce, peak-load checkout resilience, and dynamic catalog architectures." },
-      { id: "education", name: "Education", desc: "Scalable institutional LMS, secure examination engines, and student performance metrics." },
-      { id: "realestate", name: "Real Estate", desc: "Property asset management platforms, lease tracking workflows, and tenant portals." },
       { id: "manufacturing", name: "Manufacturing", desc: "Shop-floor telemetry, predictive maintenance alerts, and ERP supply-chain sync." },
       { id: "logistics", name: "Logistics", desc: "Fleet tracking platforms, automated warehouse management (WMS), and dispatch routing." },
-      { id: "travel", name: "Travel & Hospitality", desc: "Central booking engines, property management connectors, and dynamic itinerary sync." },
-      { id: "professional", name: "Professional Services", desc: "Practice management software, automated client billing, and secure matter rooms." },
-      { id: "media", name: "Media", desc: "Digital asset management (DAM), video transcoding pipelines, and content distribution." },
+      { id: "education", name: "Education", desc: "Scalable institutional LMS, secure examination engines, and student performance metrics." },
       { id: "startups", name: "Startups", desc: "Production-ready MVP engineering, multi-tenant cloud foundations, and venture-scale readiness." }
     ]
   },
@@ -438,7 +434,7 @@ export const companyData = {
   },
   contact: {
     leftHeading: "Let’s Build What’s Next",
-    leftDescription: "Anthropic Gen Digital Systems Pvt Ltd partners with forward-thinking organizations to build dependable, scalable software systems. Our senior practice leads are available to discuss your architectural requirements and project roadmaps.",
+    leftDescription: "Talk to our senior leads about your project roadmap.",
     buttonText: "Send Inquiry"
   }
 };

@@ -12,30 +12,30 @@ import { corporatePhotography } from '../data/photography';
 export default function WhyChooseUs() {
   return (
     <section id="why-choose-us" className="py-16 lg:py-[68px] bg-[#F8F9FA] border-b border-gray-200">
-      <div className="max-w-[1240px] xl:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* SECTION HEADER */}
-        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-8 sm:mb-9 lg:mb-10">
-          <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2.5 sm:mb-3">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-8 sm:mb-9 lg:mb-10">
+          <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2 sm:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
             <span>WHY CHOOSE US</span>
           </div>
-          <h2 className="text-[24px] sm:text-[28px] md:text-[31px] lg:text-[34px] xl:text-[36px] font-semibold text-[#111827] leading-[1.2] tracking-tight md:whitespace-nowrap">
-            Technology Solutions Built to Deliver Lasting Value
+          <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-[#111827] leading-[1.2] tracking-tight">
+            Built to Deliver Lasting Value
           </h2>
-          <p className="mt-3 sm:mt-3.5 text-[14px] sm:text-[14.5px] lg:text-[15px] text-[#5B6472] leading-relaxed max-w-2xl mx-auto">
-            We combine practical technology expertise, business understanding, and reliable delivery to build solutions aligned with real business goals.
+          <p className="mt-2 text-[13.5px] sm:text-[14px] text-[#5B6472] leading-relaxed">
+            Practical expertise and reliable delivery, aligned with real business goals.
           </p>
         </div>
 
         {/* ASYMMETRIC BENTO GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 items-stretch">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 items-start">
+
           {/* LARGE FEATURE CARD: 01 — Business-Focused Approach (Spans 5 cols on lg) */}
-          <div className="md:col-span-2 lg:col-span-5 bg-white border border-gray-200/90 rounded-2xl p-4 sm:p-5 lg:p-5 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
+          <div className="md:col-span-2 lg:col-span-5 bg-white border border-gray-200/90 rounded-2xl p-4 sm:p-5 lg:p-5 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col group">
             <div>
-              {/* Proportional Corporate Image inside the feature card */}
-              <div className="relative w-full h-36 sm:h-40 lg:h-40 rounded-xl overflow-hidden mb-3.5 sm:mb-4 border border-gray-100 bg-gray-100">
+              {/* Corporate Image */}
+              <div className="relative w-full h-48 sm:h-52 lg:h-60 rounded-xl overflow-hidden mb-3.5 sm:mb-4 border border-gray-100 bg-gray-100">
                 <img
                   src={corporatePhotography.whyUs.url}
                   alt="Anthropic Gen Digital Systems engineering leadership team"

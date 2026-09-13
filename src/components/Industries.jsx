@@ -20,7 +20,7 @@ export default function Industries() {
             {industries.heading}
           </h2>
           <p className="mt-2 text-[13.5px] sm:text-[14px] text-[#5B6472] leading-relaxed">
-            Domain constraints require purpose-built software architectures. We combine technical rigor with deep regulatory and workflow awareness across twelve vital industries.
+            Purpose-built architectures backed by deep regulatory and workflow expertise.
           </p>
         </div>
 
@@ -32,11 +32,11 @@ export default function Industries() {
             return (
               <div
                 key={ind.id}
-                className="group rounded-xl overflow-hidden bg-white border border-gray-200 hover:border-gray-300 hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
+                className="group rounded-xl overflow-hidden bg-white border border-gray-200 hover:border-gray-300 hover:-translate-y-0.5 hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   {/* Real Photography Vignette */}
-                  <div className="relative h-32 sm:h-34 w-full overflow-hidden bg-gray-100">
+                  <div className="relative h-28 sm:h-[7.5rem] w-full overflow-hidden bg-gray-100">
                     <img
                       src={photoUrl}
                       alt={`${ind.name} enterprise technology`}
@@ -56,14 +56,14 @@ export default function Industries() {
                   </div>
 
                   {/* Description */}
-                  <div className="p-3.5">
-                    <p className="text-[11.5px] sm:text-[12px] text-[#5B6472] leading-relaxed">
+                  <div className="p-3">
+                    <p className="text-[11.5px] sm:text-[12px] text-[#5B6472] leading-relaxed line-clamp-2">
                       {ind.desc}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-3.5 pt-0 border-t border-gray-100 mt-1">
+                <div className="p-3 pt-0 border-t border-gray-100 mt-1">
                   <a 
                     href="#contact" 
                     className="inline-flex items-center text-[11px] sm:text-[11.5px] font-semibold text-[#111827] group-hover:text-[#1D4ED8] transition-colors"

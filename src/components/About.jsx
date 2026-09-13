@@ -45,7 +45,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-14 sm:py-16 lg:py-[60px] bg-white border-b border-gray-200">
-      <div className="max-w-[1240px] xl:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* TOP: Two-Column Aligned Executive Block (Story & Uncropped Team Visual) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-6 sm:mb-7">
@@ -57,7 +57,7 @@ export default function About() {
               <span>ABOUT US</span>
             </div>
 
-            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[34px] font-semibold text-[#111827] leading-[1.2] tracking-tight">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-[#111827] leading-[1.2] tracking-tight">
               Technology Built Around Real Business Needs
             </h2>
 

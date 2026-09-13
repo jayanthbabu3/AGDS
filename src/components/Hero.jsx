@@ -195,7 +195,7 @@ export default function Hero() {
   ];
 
   return (
-    <header className="hero-field relative flex items-center overflow-hidden py-8 sm:py-10 lg:py-12 xl:py-14 min-h-[calc(100vh-7rem)] lg:min-h-[calc(100vh-8rem)]">
+    <header className="hero-field relative flex items-center overflow-hidden py-8 sm:py-10 lg:py-12 xl:py-14 min-h-[calc(100vh-5rem)]">
       {/* Background Mesh Grid */}
       <div aria-hidden="true" className="hero-mesh absolute inset-0 pointer-events-none" />
 
@@ -220,7 +220,7 @@ export default function Hero() {
       <div aria-hidden="true" className="grain absolute inset-0 pointer-events-none" />
 
       {/* Main Responsive Grid Container */}
-      <div className="relative z-10 mx-auto w-full max-w-[1240px] xl:max-w-[1280px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
           
           {/* Left Content Column */}

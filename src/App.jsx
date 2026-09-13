@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TopUtilityBar from './components/TopUtilityBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
@@ -36,8 +35,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F8F9FA] text-[#111827] selection:bg-blue-500/20 selection:text-[#111827]">
-      {/* 01: Header Navigation & Top Corporate Bar */}
-      <TopUtilityBar />
+      {/* 01: Header Navigation */}
       <Header />
 
       {/* Main Content Area */}

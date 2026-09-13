@@ -1,25 +1,15 @@
 import React from 'react';
-import {
-  Buildings,
-  Hexagon,
-  Heartbeat,
-  CloudCheck,
-  Stack,
-  Sparkle,
-  ChartLineUp,
-  Database
-} from '@phosphor-icons/react';
+import { SiAccenture, SiInfosys, SiTcs, SiWipro, SiHcl, SiSap } from 'react-icons/si';
 
-// Exact 8 Client brands from reference website
+// Placeholder brand logos for local/demo purposes only — swap for real client
+// logos (with authorization) before this site goes live.
 const CLIENTS = [
-  { name: 'FinVox', slug: 'finvox', icon: Buildings, color: '#2563eb' },
-  { name: 'Hyperscale', slug: 'hyperscale', icon: Hexagon, color: '#7c3aed' },
-  { name: 'Nexus Health', slug: 'nexus-health', icon: Heartbeat, color: '#e11d48' },
-  { name: 'Terra Cloud', slug: 'terra-cloud', icon: CloudCheck, color: '#059669' },
-  { name: 'Datalink AI', slug: 'datalink-ai', icon: Stack, color: '#ea580c' },
-  { name: 'Quantum Ventures', slug: 'quantum-ventures', icon: Sparkle, color: '#4f46e5' },
-  { name: 'Vertex', slug: 'vertex', icon: ChartLineUp, color: '#0d9488' },
-  { name: 'Omicron Data', slug: 'omicron-data', icon: Database, color: '#d97706' }
+  { name: 'Accenture', slug: 'accenture', icon: SiAccenture, color: '#A100FF' },
+  { name: 'Infosys', slug: 'infosys', icon: SiInfosys, color: '#007CC3' },
+  { name: 'TCS', slug: 'tcs', icon: SiTcs, color: '#EE3984' },
+  { name: 'Wipro', slug: 'wipro', icon: SiWipro, color: '#341C53' },
+  { name: 'HCLTech', slug: 'hcltech', icon: SiHcl, color: '#006BB6' },
+  { name: 'SAP', slug: 'sap', icon: SiSap, color: '#0FAAFF' }
 ];
 
 export default function TrustedBy() {
@@ -28,15 +18,19 @@ export default function TrustedBy() {
 
   return (
     <section id="clients" className="w-full border-t border-line/70 pt-12 pb-6 md:pt-16 md:pb-8 bg-white">
-      <div className="mx-auto w-full max-w-[1240px] xl:max-w-[1280px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
         
-        {/* Header: Title on top, Narrative text directly below */}
-        <div className="border-b border-line pb-6">
-          <h2 className="display text-[clamp(1.75rem,2.8vw,2.3rem)] text-ink tracking-tight">
+        {/* Section Header */}
+        <div className="max-w-3xl border-b border-line pb-6">
+          <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2 sm:mb-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+            <span>OUR PARTNERS</span>
+          </div>
+          <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-ink leading-[1.2] tracking-tight">
             Clients we've delivered for
           </h2>
-          <p className="mt-2.5 max-w-2xl text-[14px] sm:text-[15px] leading-relaxed text-body">
-            Founders and engineering leaders across fintech, health and B2B SaaS bring us the engagement they can't afford to get wrong.
+          <p className="mt-2 text-[13.5px] sm:text-[14px] text-body leading-relaxed">
+            The engagements engineering leaders can't afford to get wrong.
           </p>
         </div>
 
@@ -48,33 +42,32 @@ export default function TrustedBy() {
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 4%, black 96%, transparent)'
           }}
         >
-          <div className="marquee-track flex w-max items-center gap-4 py-1 pr-4">
+          <div className="marquee-track flex w-max items-center gap-5 py-2 pr-5">
             {marqueeItems.map((client, idx) => (
               <div
                 key={`${client.slug}-${idx}`}
-                className="group relative flex h-24 w-44 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-line bg-raised transition-transform duration-300 hover:-translate-y-0.5 shadow-sm"
+                className="group relative flex h-28 w-48 shrink-0 flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-line bg-raised transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-lg"
                 style={{ '--brand': client.color }}
               >
-                {/* Brand Color Ambient Gradient */}
+                {/* Brand Color Ambient Gradient — reveals on hover */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.16]"
+                  className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-[0.14]"
                   style={{
-                    backgroundImage: 'linear-gradient(155deg, var(--brand) 0%, transparent 75%)'
+                    backgroundImage: 'linear-gradient(155deg, var(--brand) 0%, transparent 70%)'
                   }}
                 />
 
-                {/* Brand Icon & Name */}
-                <div className="relative flex flex-col items-center gap-2">
-                  <client.icon
-                    weight="duotone"
-                    className="size-6"
-                    style={{ color: 'var(--brand)' }}
-                  />
-                  <span className="text-[1rem] font-bold tracking-[-0.01em] text-ink">
-                    {client.name}
-                  </span>
-                </div>
+                {/* Brand Logo & Name */}
+                <client.icon
+                  size={34}
+                  aria-hidden="true"
+                  className="relative transition-transform duration-300"
+                  style={{ color: 'var(--brand)' }}
+                />
+                <span className="relative text-[0.95rem] font-semibold tracking-[-0.01em] text-body transition-colors duration-300 group-hover:text-ink">
+                  {client.name}
+                </span>
               </div>
             ))}
           </div>

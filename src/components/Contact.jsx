@@ -74,7 +74,7 @@ export default function Contact({ preselectedService }) {
 
   return (
     <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-200">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
@@ -86,7 +86,7 @@ export default function Contact({ preselectedService }) {
                 <span>INITIATE ENGAGEMENT &bull; GET IN TOUCH</span>
               </div>
 
-              <h2 className="text-[26px] sm:text-[30px] lg:text-[34px] font-semibold text-[#111827] leading-[1.2] tracking-tight mb-2">
+              <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-[#111827] leading-[1.2] tracking-tight mb-2">
                 {contact.leftHeading}
               </h2>
 

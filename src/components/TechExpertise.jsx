@@ -9,8 +9,28 @@ import {
   GitBranch,
   ShieldCheck,
   Layers,
-  Code2
+  Code2,
+  KeyRound,
+  Lock,
+  ShieldAlert,
+  Sparkles
 } from 'lucide-react';
+import {
+  SiHtml5,
+  SiCss,
+  SiElasticsearch,
+  SiClickhouse,
+  SiCloudflare,
+  SiLangchain,
+  SiMilvus,
+  SiScikitlearn,
+  SiGithubactions,
+  SiGitlab,
+  SiPrometheus,
+  SiVault,
+  SiSonarqubeserver,
+  SiOwasp
+} from 'react-icons/si';
 import { companyData } from '../data/companyInfo';
 
 // Category metadata: icons and theme colors
@@ -314,6 +334,96 @@ function TechIcon({ name }) {
     );
   }
 
+  // HTML5 / CSS3
+  if (n.includes('html5')) {
+    return (
+      <span className="inline-flex shrink-0 -space-x-0.5">
+        <SiHtml5 size={14} style={{ color: '#E34F26' }} />
+        <SiCss size={14} style={{ color: '#663399' }} />
+      </span>
+    );
+  }
+
+  // Elasticsearch
+  if (n.includes('elasticsearch')) {
+    return <SiElasticsearch size={14} className="shrink-0" style={{ color: '#005571' }} />;
+  }
+
+  // ClickHouse
+  if (n.includes('clickhouse')) {
+    return <SiClickhouse size={14} className="shrink-0" style={{ color: '#FFCC01' }} />;
+  }
+
+  // Cloudflare
+  if (n.includes('cloudflare')) {
+    return <SiCloudflare size={14} className="shrink-0" style={{ color: '#F38020' }} />;
+  }
+
+  // LangChain
+  if (n.includes('langchain')) {
+    return <SiLangchain size={14} className="shrink-0" style={{ color: '#1C3C3C' }} />;
+  }
+
+  // Milvus / pgvector
+  if (n.includes('milvus')) {
+    return <SiMilvus size={14} className="shrink-0" style={{ color: '#00A1EA' }} />;
+  }
+
+  // LlamaIndex — no official brand mark available, use a themed fallback
+  if (n.includes('llamaindex')) {
+    return <Sparkles className="w-3.5 h-3.5 shrink-0" style={{ color: '#7C3AED' }} />;
+  }
+
+  // Scikit-Learn
+  if (n.includes('scikit')) {
+    return <SiScikitlearn size={14} className="shrink-0" style={{ color: '#F7931E' }} />;
+  }
+
+  // GitHub Actions
+  if (n.includes('github')) {
+    return <SiGithubactions size={14} className="shrink-0" style={{ color: '#2088FF' }} />;
+  }
+
+  // GitLab CI
+  if (n.includes('gitlab')) {
+    return <SiGitlab size={14} className="shrink-0" style={{ color: '#FC6D26' }} />;
+  }
+
+  // Prometheus
+  if (n.includes('prometheus')) {
+    return <SiPrometheus size={14} className="shrink-0" style={{ color: '#E6522C' }} />;
+  }
+
+  // HashiCorp Vault
+  if (n.includes('vault')) {
+    return <SiVault size={14} className="shrink-0" style={{ color: '#000000' }} />;
+  }
+
+  // SonarQube
+  if (n.includes('sonarqube')) {
+    return <SiSonarqubeserver size={14} className="shrink-0" style={{ color: '#126ED3' }} />;
+  }
+
+  // OWASP ZAP
+  if (n.includes('owasp')) {
+    return <SiOwasp size={14} className="shrink-0" style={{ color: '#000000' }} />;
+  }
+
+  // Wazuh SIEM — no official brand mark available, use a themed fallback
+  if (n.includes('wazuh')) {
+    return <ShieldAlert className="w-3.5 h-3.5 shrink-0" style={{ color: '#DC2626' }} />;
+  }
+
+  // OAuth 2.0 / OIDC — no single brand mark, use a themed fallback
+  if (n.includes('oauth') || n.includes('oidc')) {
+    return <KeyRound className="w-3.5 h-3.5 shrink-0" style={{ color: '#0EA5E9' }} />;
+  }
+
+  // mTLS — no brand mark, use a themed fallback
+  if (n.includes('mtls')) {
+    return <Lock className="w-3.5 h-3.5 shrink-0" style={{ color: '#0D9488' }} />;
+  }
+
   // Default / generic tech badge icon
   return <Code2 className="w-3.5 h-3.5 shrink-0 text-gray-500" />;
 }
@@ -340,7 +450,7 @@ export default function TechExpertise() {
         </div>
 
         {/* 8 Categories Grid with Category Icons & Tech Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 items-start">
           {techExpertise.categories.map((cat) => {
             const meta = CATEGORY_META[cat.name] || {
               icon: Layers,

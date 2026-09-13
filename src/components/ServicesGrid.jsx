@@ -34,13 +34,29 @@ export default function ServicesGrid({ onSelectService }) {
     'system-integration': Network,
   };
 
+  // One accent color per service category, so the grid is scannable at a glance
+  const accentMap = {
+    'software-development': '#2563EB',
+    'web-development': '#0EA5E9',
+    'mobile-app-development': '#7C3AED',
+    'artificial-intelligence': '#DB2777',
+    'gen-ai-llm': '#9333EA',
+    'cloud-devops': '#0D9488',
+    'cybersecurity': '#DC2626',
+    'data-analytics': '#D97706',
+    'digital-transformation': '#4338CA',
+    'uiux-product-design': '#E11D48',
+    'it-consulting': '#059669',
+    'system-integration': '#0891B2',
+  };
+
   return (
     <section id="services" className="py-14 sm:py-16 lg:py-[64px] bg-[#F8F9FA] border-b border-gray-200">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Clean Centered Introduction */}
-        <div className="max-w-[720px] mx-auto text-center mb-8 sm:mb-9 lg:mb-10 space-y-2.5">
-          <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8]">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-8 sm:mb-9 lg:mb-10">
+          <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2 sm:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
             <span>{services.eyebrow}</span>
           </div>
@@ -49,7 +65,7 @@ export default function ServicesGrid({ onSelectService }) {
             {services.heading}
           </h2>
 
-          <p className="text-[13.5px] sm:text-[14px] lg:text-[14.5px] text-[#5B6472] leading-relaxed">
+          <p className="mt-2 text-[13.5px] sm:text-[14px] text-[#5B6472] leading-relaxed">
             {services.supportingText}
           </p>
         </div>
@@ -58,21 +74,30 @@ export default function ServicesGrid({ onSelectService }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           {services.items.map((item) => {
             const Icon = iconMap[item.id] || Code2;
+            const accent = accentMap[item.id] || '#1D4ED8';
 
             return (
               <div
                 key={item.id}
                 onClick={() => onSelectService && onSelectService(item)}
-                className="group p-4 sm:p-4.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 hover:-translate-y-0.5 hover:shadow-xs transition-all duration-200 flex flex-col justify-between cursor-pointer h-full"
+                style={{ '--accent': accent }}
+                className="group p-4 sm:p-4.5 rounded-xl bg-white border border-gray-200 hover:border-[color:var(--accent)]/30 hover:-translate-y-0.5 hover:shadow-xs transition-all duration-200 flex flex-col justify-between cursor-pointer h-full"
               >
                 <div>
-                  {/* Top: Minimal Outline Icon */}
-                  <div className="w-8.5 h-8.5 rounded-lg bg-[#F8F9FA] border border-gray-200/80 text-gray-700 flex items-center justify-center mb-3 group-hover:bg-blue-50 group-hover:border-blue-200 group-hover:text-[#1D4ED8] transition-colors">
+                  {/* Top: Category-Colored Icon Chip */}
+                  <div
+                    className="w-8.5 h-8.5 rounded-lg flex items-center justify-center mb-3 transition-colors"
+                    style={{
+                      backgroundColor: 'color-mix(in srgb, var(--accent) 12%, white)',
+                      border: '1px solid color-mix(in srgb, var(--accent) 25%, white)',
+                      color: 'var(--accent)'
+                    }}
+                  >
                     <Icon className="w-4 h-4 stroke-[1.75]" />
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-[13.5px] sm:text-[14px] font-semibold text-[#111827] mb-1.5 group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                  <h3 className="text-[13.5px] sm:text-[14px] font-semibold text-[#111827] mb-1.5 transition-colors leading-snug group-hover:text-[color:var(--accent)]">
                     {item.title}
                   </h3>
 
@@ -83,7 +108,7 @@ export default function ServicesGrid({ onSelectService }) {
                 </div>
 
                 {/* Bottom: Learn More / Arrow */}
-                <div className="mt-3.5 pt-2.5 border-t border-gray-100 flex items-center justify-between text-[11px] sm:text-[11.5px] font-medium text-[#111827] group-hover:text-[#1D4ED8] transition-colors">
+                <div className="mt-3.5 pt-2.5 border-t border-gray-100 flex items-center justify-between text-[11px] sm:text-[11.5px] font-medium text-[#111827] transition-colors group-hover:text-[color:var(--accent)]">
                   <span>Learn more</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </div>
