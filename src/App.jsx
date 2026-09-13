@@ -10,8 +10,6 @@ import Industries from './components/Industries';
 import TechExpertise from './components/TechExpertise';
 import Process from './components/Process';
 import WhyChooseUs from './components/WhyChooseUs';
-import CaseStudies from './components/CaseStudies';
-import CallToAction from './components/CallToAction';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -68,13 +66,7 @@ function App() {
         {/* 09: Our Process */}
         <Process />
 
-        {/* 10: Case Studies */}
-        <CaseStudies />
-
-        {/* 11: Mid-Page Call to Action */}
-        <CallToAction />
-
-        {/* 12: Contact Section */}
+        {/* 10: Contact Section */}
         <Contact preselectedService={inquiryService} />
       </main>
 
