@@ -24,9 +24,9 @@ export const corporatePhotography = {
     caption: "Client engagement and architectural consultation facilities"
   },
   whyUs: {
-    url: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
-    alt: "Cross-functional technology consulting team discussing enterprise solutions",
-    caption: "Accountable engineering teams focused on measurable business outcomes"
+    url: "/why-us-team.jpg",
+    alt: "Anthropic Gen Digital Systems executive engineering consulting team collaborating in Bengaluru delivery center",
+    caption: "Bengaluru Delivery Center — Executive architecture & digital strategy consultation"
   },
   services: {
     'software-development': "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80",

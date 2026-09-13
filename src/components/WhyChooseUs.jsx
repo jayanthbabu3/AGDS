@@ -4,109 +4,130 @@ import {
   Layers, 
   ShieldCheck, 
   Code2, 
-  Handshake, 
-  CheckCircle2 
+  Handshake 
 } from 'lucide-react';
-import { companyData } from '../data/companyInfo';
 import { corporatePhotography } from '../data/photography';
 
 export default function WhyChooseUs() {
-  const { whyChooseUs } = companyData;
-
-  const iconMap = {
-    'business-focused': Target,
-    'scalable-technology': Layers,
-    'reliable-delivery': ShieldCheck,
-    'modern-expertise': Code2,
-    'long-term-partnership': Handshake,
-  };
+  const benefits = [
+    {
+      num: '01',
+      title: 'Business-Focused Approach',
+      desc: 'Engineering decisions anchored directly in measurable business ROI, operational efficiency, and commercial outcomes.',
+      icon: Target
+    },
+    {
+      num: '02',
+      title: 'Scalable Technology',
+      desc: 'Architectures engineered to handle exponential workload growth, multi-tenant resilience, and seamless cloud scale.',
+      icon: Layers
+    },
+    {
+      num: '03',
+      title: 'Reliable Delivery',
+      desc: 'Disciplined sprint cadence, transparent milestone governance, zero-downtime deployments, and audited SLAs.',
+      icon: ShieldCheck
+    },
+    {
+      num: '04',
+      title: 'Modern Technology Expertise',
+      desc: 'Deep engineering depth across applied AI, cloud-native microservices, secure data pipelines, and modern web platforms.',
+      icon: Code2
+    },
+    {
+      num: '05',
+      title: 'Long-Term Partnership',
+      desc: 'Continuous support, proactive telemetry monitoring, and architectural evolution long after initial production deployment.',
+      icon: Handshake
+    }
+  ];
 
   return (
-    <section id="why-choose-us" className="py-16 sm:py-20 lg:py-22 bg-white border-b border-gray-200">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
-        
-        {/* Section Header: Clean Centered Introduction with Proportional Typography */}
-        <div className="max-w-[720px] mx-auto text-center mb-10 lg:mb-12 space-y-2.5">
-          <div className="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1D4ED8]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
-            <span>{whyChooseUs.eyebrow}</span>
-          </div>
-
-          <h2 className="text-[24px] sm:text-[28px] lg:text-[34px] font-semibold text-[#111827] leading-[1.22] tracking-tight">
-            {whyChooseUs.heading}
-          </h2>
-
-          <p className="text-[14px] sm:text-[15px] text-[#5B6472] leading-relaxed max-w-[680px] mx-auto">
-            {whyChooseUs.supportingText}
-          </p>
-        </div>
-
-        {/* Main 2-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+    <section id="why-choose-us" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-200">
+      <div className="max-w-[1240px] xl:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
           
-          {/* LEFT SIDE — Professional Realistic Corporate Image with Controlled Height */}
-          <div className="lg:col-span-5 flex flex-col">
-            <div className="relative h-full min-h-[360px] sm:min-h-[400px] lg:min-h-[440px] max-h-[480px] rounded-2xl overflow-hidden border border-gray-200/90 shadow-xs bg-gray-100 group">
+          {/* LEFT COLUMN: Large Realistic Corporate Photograph (~45% width) */}
+          <div className="lg:col-span-5 order-1">
+            <div className="relative rounded-2xl overflow-hidden border border-gray-200/90 shadow-sm bg-gray-100 group">
               <img
                 src={corporatePhotography.whyUs.url}
-                alt="Technology engineering and consulting team collaborating around workstations in a modern office"
-                className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                alt="Anthropic Gen Digital Systems executive engineering consulting team collaborating in modern office"
+                className="w-full h-[380px] sm:h-[460px] lg:h-[540px] xl:h-[560px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.01]"
                 loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = corporatePhotography.about.url;
-                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-[10px] sm:text-[11px] uppercase tracking-wider text-blue-200 font-semibold mb-0.5">
-                  Cross-Functional Team
+
+              {/* Minimal Bottom Caption Bar */}
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900/85 via-gray-900/40 to-transparent p-4 sm:p-5 pt-10 text-white">
+                <p className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-blue-300">
+                  Executive Technology Advisory
                 </p>
-                <p className="text-xs sm:text-[13px] font-medium text-white/95 leading-snug">
-                  Bengaluru Delivery Center — Collaborative architecture & sprint execution
+                <p className="text-xs sm:text-[13px] text-gray-200 mt-0.5 font-medium leading-snug">
+                  Bengaluru Delivery Center &bull; High-performance sprint architecture
                 </p>
               </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE — 5 Clean Benefit Blocks (Refined Heights & Spacing) */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-2.5 sm:space-y-3">
-            {whyChooseUs.benefits.map((benefit) => {
-              const Icon = iconMap[benefit.id] || Target;
+          {/* RIGHT COLUMN: Executive Header & 5 Compact Benefit Rows (~55% width) */}
+          <div className="lg:col-span-7 order-2 flex flex-col justify-center">
+            
+            {/* Header Content */}
+            <div className="space-y-2.5">
+              <div className="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1D4ED8]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+                <span>WHY CHOOSE US</span>
+              </div>
 
-              return (
-                <div
-                  key={benefit.id}
-                  className="group p-3.5 sm:p-4 rounded-xl border border-gray-100/90 hover:border-gray-200 bg-[#FBFBFB] hover:bg-white hover:shadow-xs transition-all duration-200 flex items-start gap-3.5"
-                >
-                  {/* Small minimal outline icon */}
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200/80 text-gray-700 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-blue-50 group-hover:border-blue-200 group-hover:text-[#1D4ED8] transition-colors">
-                    <Icon className="w-4.5 h-4.5 stroke-[1.75]" />
-                  </div>
+              <h2 className="text-[26px] sm:text-[32px] lg:text-[36px] xl:text-[38px] font-semibold text-[#111827] leading-[1.18] tracking-tight">
+                Technology Solutions Built to Deliver Lasting Value
+              </h2>
 
-                  {/* Benefit Content */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[15px] sm:text-[16px] font-semibold text-[#111827] mb-0.5 group-hover:text-[#1D4ED8] transition-colors leading-snug">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Subtle Trust Indicator at the Bottom */}
-            <div className="pt-3 mt-1 border-t border-gray-100 flex items-center space-x-2 text-[12px] sm:text-[13px] font-medium text-[#4B5563]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8] shrink-0"></span>
-              <span>{whyChooseUs.trustStatement}</span>
+              <p className="text-[14px] sm:text-[15px] text-[#5B6472] leading-relaxed max-w-xl">
+                We combine technical rigor, cloud-native architecture, and disciplined engineering execution to help enterprises build dependable digital systems that stand the test of time.
+              </p>
             </div>
+
+            {/* 5 Compact Horizontal Benefit Rows with Subtle Dividers */}
+            <div className="divide-y divide-gray-200/80 border-y border-gray-200/80 mt-6 sm:mt-7">
+              {benefits.map((item) => {
+                const IconComponent = item.icon;
+
+                return (
+                  <div
+                    key={item.num}
+                    className="group py-3.5 sm:py-4 px-2 sm:px-3 -mx-2 sm:-mx-3 rounded-lg hover:bg-[#F9FAFB] transition-colors duration-150 flex items-start gap-3.5 sm:gap-4 cursor-default"
+                  >
+                    {/* Minimal Outline Icon */}
+                    <div className="w-8 h-8 rounded-md bg-white border border-gray-200/90 flex items-center justify-center shrink-0 mt-0.5 text-[#5B6472] group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-colors duration-150 shadow-2xs">
+                      <IconComponent className="w-4 h-4 stroke-[1.75] transition-transform duration-150 group-hover:translate-x-0.5" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline space-x-2">
+                        <span className="font-mono text-xs font-semibold text-[#1D4ED8] tracking-wide">
+                          {item.num}
+                        </span>
+                        <span className="text-gray-300 text-xs">&mdash;</span>
+                        <h3 className="text-[15px] sm:text-[16px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p className="text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed mt-1">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
 
         </div>
-
       </div>
     </section>
   );
 }
+
