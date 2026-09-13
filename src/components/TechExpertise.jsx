@@ -450,7 +450,7 @@ export default function TechExpertise() {
         </div>
 
         {/* 8 Categories Grid with Category Icons & Tech Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           {techExpertise.categories.map((cat) => {
             const meta = CATEGORY_META[cat.name] || {
               icon: Layers,
