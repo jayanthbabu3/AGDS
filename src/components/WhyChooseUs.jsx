@@ -15,12 +15,12 @@ export default function WhyChooseUs() {
       <div className="max-w-[1240px] xl:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION HEADER */}
-        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-9 lg:mb-10">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-8 sm:mb-9 lg:mb-10">
           <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2.5 sm:mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
             <span>WHY CHOOSE US</span>
           </div>
-          <h2 className="text-[28px] sm:text-[32px] lg:text-[35px] xl:text-[36px] font-semibold text-[#111827] leading-[1.18] tracking-tight">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[31px] lg:text-[34px] xl:text-[36px] font-semibold text-[#111827] leading-[1.2] tracking-tight md:whitespace-nowrap">
             Technology Solutions Built to Deliver Lasting Value
           </h2>
           <p className="mt-3 sm:mt-3.5 text-[14px] sm:text-[14.5px] lg:text-[15px] text-[#5B6472] leading-relaxed max-w-2xl mx-auto">
@@ -35,11 +35,11 @@ export default function WhyChooseUs() {
           <div className="md:col-span-2 lg:col-span-5 bg-white border border-gray-200/90 rounded-2xl p-4 sm:p-5 lg:p-5 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
             <div>
               {/* Proportional Corporate Image inside the feature card */}
-              <div className="relative w-full h-36 sm:h-40 lg:h-38 rounded-xl overflow-hidden mb-3.5 sm:mb-4 border border-gray-100 bg-gray-100">
+              <div className="relative w-full h-36 sm:h-40 lg:h-40 rounded-xl overflow-hidden mb-3.5 sm:mb-4 border border-gray-100 bg-gray-100">
                 <img
                   src={corporatePhotography.whyUs.url}
                   alt="Anthropic Gen Digital Systems engineering leadership team"
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
