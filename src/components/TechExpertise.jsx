@@ -322,25 +322,25 @@ export default function TechExpertise() {
   const { techExpertise } = companyData;
 
   return (
-    <section className="py-20 lg:py-24 bg-[#F8F9FA] border-b border-gray-200">
+    <section className="py-14 sm:py-16 lg:py-[64px] bg-[#F8F9FA] border-b border-gray-200">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-14">
-          <div className="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2.5">
+        <div className="max-w-3xl mb-8 sm:mb-9 lg:mb-10">
+          <div className="inline-flex items-center space-x-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2 sm:mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
             <span>TECHNOLOGY EXPERTISE &bull; ECOSYSTEM</span>
           </div>
-          <h2 className="text-[24px] sm:text-[28px] lg:text-[34px] font-semibold text-[#111827] leading-[1.22] tracking-tight">
+          <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-[#111827] leading-[1.2] tracking-tight">
             {techExpertise.heading}
           </h2>
-          <p className="mt-2.5 text-[14px] sm:text-[15px] text-[#5B6472] leading-relaxed">
+          <p className="mt-2 text-[13.5px] sm:text-[14px] text-[#5B6472] leading-relaxed">
             {techExpertise.subheading}
           </p>
         </div>
 
         {/* 8 Categories Grid with Category Icons & Tech Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           {techExpertise.categories.map((cat) => {
             const meta = CATEGORY_META[cat.name] || {
               icon: Layers,
@@ -353,30 +353,30 @@ export default function TechExpertise() {
             return (
               <div
                 key={cat.name}
-                className={`p-5 rounded-xl bg-white border border-gray-200 shadow-xs hover:shadow-md ${meta.hoverBorder} hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between group`}
+                className={`p-4 sm:p-4.5 rounded-xl bg-white border border-gray-200 shadow-xs hover:shadow-sm ${meta.hoverBorder} hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between group`}
               >
                 <div>
                   {/* Category Header with Icon */}
-                  <div className="flex items-center space-x-3 pb-3 mb-3.5 border-b border-gray-100">
-                    <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border ${meta.iconBg}`}>
-                      <IconComponent className="w-4.5 h-4.5" />
+                  <div className="flex items-center space-x-2.5 pb-2.5 mb-2.5 border-b border-gray-100">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border ${meta.iconBg}`}>
+                      <IconComponent className="w-4 h-4" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-[#111827] tracking-tight">
+                      <h3 className="text-[13.5px] sm:text-[14px] font-bold text-[#111827] tracking-tight">
                         {cat.name}
                       </h3>
-                      <span className="text-[11px] font-medium text-[#5B6472]">
+                      <span className="text-[10.5px] sm:text-[11px] font-medium text-[#5B6472]">
                         {cat.technologies.length} Technologies
                       </span>
                     </div>
                   </div>
 
                   {/* Technology Badges with Individual Icons */}
-                  <div className="flex flex-wrap gap-1.5 pt-1">
+                  <div className="flex flex-wrap gap-1.5 pt-0.5">
                     {cat.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-[#F9FAFB] hover:bg-white border border-gray-200/90 hover:border-gray-300 rounded-md text-[11.5px] sm:text-[12px] font-medium text-[#1F2937] shadow-2xs hover:shadow-xs transition-all duration-150"
+                        className="inline-flex items-center gap-1.5 px-2 py-1 bg-[#F9FAFB] hover:bg-white border border-gray-200/90 hover:border-gray-300 rounded-md text-[11px] sm:text-[11.5px] font-medium text-[#1F2937] shadow-2xs hover:shadow-xs transition-all duration-150"
                       >
                         <TechIcon name={tech} />
                         <span>{tech}</span>
