@@ -42,11 +42,11 @@ export default function TrustedBy() {
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 4%, black 96%, transparent)'
           }}
         >
-          <div className="marquee-track flex w-max items-center gap-5 py-2 pr-5">
+          <div className="marquee-track flex w-max items-center gap-3 py-2 pr-3 sm:gap-5 sm:pr-5">
             {marqueeItems.map((client, idx) => (
               <div
                 key={`${client.slug}-${idx}`}
-                className="group relative flex h-28 w-48 shrink-0 flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-line bg-raised transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-lg"
+                className="group relative flex h-20 w-32 shrink-0 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-line bg-raised transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-lg sm:h-28 sm:w-48 sm:gap-3"
                 style={{ '--brand': client.color }}
               >
                 {/* Brand Color Ambient Gradient — reveals on hover */}
@@ -60,12 +60,11 @@ export default function TrustedBy() {
 
                 {/* Brand Logo & Name */}
                 <client.icon
-                  size={34}
                   aria-hidden="true"
-                  className="relative transition-transform duration-300"
+                  className="relative size-6 shrink-0 transition-transform duration-300 sm:size-[34px]"
                   style={{ color: 'var(--brand)' }}
                 />
-                <span className="relative text-[0.95rem] font-semibold tracking-[-0.01em] text-body transition-colors duration-300 group-hover:text-ink">
+                <span className="relative text-[0.78rem] font-semibold tracking-[-0.01em] text-body transition-colors duration-300 group-hover:text-ink sm:text-[0.95rem]">
                   {client.name}
                 </span>
               </div>

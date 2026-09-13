@@ -92,40 +92,44 @@ export default function About() {
 
         </div>
 
-        {/* 5 COMPACT EQUAL-HEIGHT VALUES CARDS (1 Row on Desktop) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 items-stretch">
+        {/* 5 COMPACT EQUAL-HEIGHT VALUES CARDS (1 Row on Desktop). Two columns
+            from the smallest width up — five cards fully stacked (grid-cols-1)
+            meant five screens of scrolling for a handful of one-liners, and
+            the arrow footer was purely decorative, so it drops out below
+            `sm` rather than eating a row of height in every single card. */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 items-stretch">
           {values.map((card) => {
             const Icon = card.icon;
 
             return (
               <div
                 key={card.num}
-                className="group p-4 rounded-xl bg-white border border-gray-200/90 hover:border-blue-300/80 hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between h-full"
+                className="group p-3 sm:p-4 rounded-xl bg-white border border-gray-200/90 hover:border-blue-300/80 hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between h-full"
               >
                 <div>
                   {/* Top Meta: Minimal Icon & Small Blue Number */}
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50/80 border border-blue-100 text-[#1D4ED8] flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4 stroke-[1.75]" />
+                  <div className="flex items-center justify-between mb-2 sm:mb-2.5">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-50/80 border border-blue-100 text-[#1D4ED8] flex items-center justify-center shrink-0">
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.75]" />
                     </div>
-                    <span className="font-mono text-[11px] sm:text-[12px] font-semibold text-[#1D4ED8] tracking-wider px-2 py-0.5 rounded bg-blue-50/60 border border-blue-100/80">
+                    <span className="font-mono text-[10px] sm:text-[12px] font-semibold text-[#1D4ED8] tracking-wider px-1.5 sm:px-2 py-0.5 rounded bg-blue-50/60 border border-blue-100/80">
                       {card.num}
                     </span>
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="text-[14px] sm:text-[14.5px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                  <h3 className="text-[13px] sm:text-[14.5px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
                     {card.title}
                   </h3>
 
                   {/* Concise Description */}
-                  <p className="mt-1.5 text-[11.5px] sm:text-[12px] text-[#5B6472] leading-relaxed">
+                  <p className="mt-1.5 text-[11px] sm:text-[12px] text-[#5B6472] leading-relaxed">
                     {card.desc}
                   </p>
                 </div>
 
-                {/* Subtle Arrow Indicator Footer */}
-                <div className="pt-2.5 mt-3 border-t border-gray-100 flex items-center justify-end">
+                {/* Subtle Arrow Indicator Footer — sm and up only */}
+                <div className="hidden sm:flex pt-2.5 mt-3 border-t border-gray-100 items-center justify-end">
                   <div className="w-6 h-6 rounded-full bg-gray-50 border border-gray-200/80 flex items-center justify-center text-gray-400 group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-200">
                     <ArrowUpRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>

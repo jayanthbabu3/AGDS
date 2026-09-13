@@ -324,35 +324,40 @@ export const companyData = {
         stage: "Discovery",
         title: "Discover",
         description: "Understand the business challenge.",
-        details: "We conduct deep discovery sessions, audit existing systems, and define verifiable technical requirements and success metrics."
+        details: "We conduct deep discovery sessions, audit existing systems, and define verifiable technical requirements and success metrics.",
+        milestone: "Requirements Signed Off"
       },
       {
         id: "plan",
         stage: "Architecture",
         title: "Plan",
         description: "Define the right technology strategy.",
-        details: "Principal architects draft architecture blueprints, technology stack decisions, security baselines, and milestone sprint roadmaps."
+        details: "Principal architects draft architecture blueprints, technology stack decisions, security baselines, and milestone sprint roadmaps.",
+        milestone: "Architecture Approved"
       },
       {
         id: "build",
         stage: "Engineering",
         title: "Design & Build",
         description: "Create and develop the solution.",
-        details: "Engineers work in transparent two-week sprints with automated testing, continuous code reviews, and bi-weekly milestone demonstrations."
+        details: "Engineers work in transparent two-week sprints with automated testing, continuous code reviews, and bi-weekly milestone demonstrations.",
+        milestone: "Sprint Demo Passed"
       },
       {
         id: "deploy",
         stage: "Deployment",
         title: "Deploy",
         description: "Launch securely.",
-        details: "We execute zero-downtime blue/green deployments backed by automated rollbacks, load stress testing, and comprehensive operational handoffs."
+        details: "We execute zero-downtime blue/green deployments backed by automated rollbacks, load stress testing, and comprehensive operational handoffs.",
+        milestone: "Zero-Downtime Verified"
       },
       {
         id: "scale",
         stage: "Evolution",
         title: "Support & Scale",
         description: "Maintain and improve continuously.",
-        details: "Dedicated engineering teams deliver 24/7 telemetry monitoring, patch governance, security updates, and performance tuning."
+        details: "Dedicated engineering teams deliver 24/7 telemetry monitoring, patch governance, security updates, and performance tuning.",
+        milestone: "SLA Compliance Confirmed"
       }
     ]
   },

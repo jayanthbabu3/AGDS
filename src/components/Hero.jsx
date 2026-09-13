@@ -21,14 +21,15 @@ function getOrbitPos(deg, radius) {
   };
 }
 
-// 6 Orbital nodes around AGDS core
+// 6 Orbital nodes around AGDS core. `short` is what mobile cards show —
+// only "Product Development" needed a shorter form; the rest already fit.
 const ORBITAL_NODES = [
-  { icon: Cpu, title: 'AI Services', sub: 'Build with intelligence' },
-  { icon: RocketLaunch, title: 'Product Development', sub: 'Scalable digital products' },
-  { icon: Briefcase, title: 'Freelancing', sub: 'On-demand expertise' },
-  { icon: CloudArrowUp, title: 'Cloud & DevOps', sub: 'Build. Deploy. Scale.' },
-  { icon: UsersFour, title: 'Dedicated Teams', sub: 'Your extended engineering team' },
-  { icon: ChatsCircle, title: 'Consulting', sub: 'From idea to impact' }
+  { icon: Cpu, title: 'AI Services', short: 'AI Services', sub: 'Build with intelligence' },
+  { icon: RocketLaunch, title: 'Product Development', short: 'Product Dev', sub: 'Scalable digital products' },
+  { icon: Briefcase, title: 'Freelancing', short: 'Freelancing', sub: 'On-demand expertise' },
+  { icon: CloudArrowUp, title: 'Cloud & DevOps', short: 'Cloud & DevOps', sub: 'Build. Deploy. Scale.' },
+  { icon: UsersFour, title: 'Dedicated Teams', short: 'Dedicated Teams', sub: 'Your extended engineering team' },
+  { icon: ChatsCircle, title: 'Consulting', short: 'Consulting', sub: 'From idea to impact' }
 ].map((item, idx) => ({
   ...item,
   ...getOrbitPos(idx * 60, ORBIT_RADIUS)
@@ -143,17 +144,20 @@ function OrbitalGraphic() {
           <p className="display text-[1rem] sm:text-[1.18rem] leading-none text-ink font-semibold">
             AGDS
           </p>
-          <p className="label mt-1 text-[0.52rem] sm:text-[0.58rem] leading-tight text-muted">
+          <p className="label mt-1 hidden text-[0.58rem] leading-tight text-muted sm:block">
             Software Engineering<br />& Applied AI
           </p>
         </div>
       </div>
 
-      {/* 6 Drifting Orbital Node Cards */}
+      {/* 6 Drifting Orbital Node Cards. Below `sm` there isn't room for a
+          two-line title plus a wrapped subtitle without cards colliding, so
+          the subtitle drops out and the card itself shrinks; sm and up keep
+          the full label. */}
       {ORBITAL_NODES.map((node, idx) => (
         <div
           key={node.title}
-          className="group absolute w-[7.8rem] sm:w-[8.8rem] lg:w-[8.6rem] xl:w-[9.6rem]"
+          className="group absolute w-[6.2rem] sm:w-[8.8rem] lg:w-[8.6rem] xl:w-[9.6rem]"
           style={{
             left: `${node.x}%`,
             top: `${node.y}%`,
@@ -165,18 +169,19 @@ function OrbitalGraphic() {
             style={{ animationDelay: `${idx * 0.6}s` }}
           >
             <span
-              className="z-10 grid size-9 sm:size-10 shrink-0 place-items-center rounded-full border border-line text-accent transition-colors duration-300 group-hover:border-accent/50 shadow-xs"
+              className="z-10 grid size-8 sm:size-10 shrink-0 place-items-center rounded-full border border-line text-accent transition-colors duration-300 group-hover:border-accent/50 shadow-xs"
               style={{
                 backgroundImage: 'linear-gradient(160deg, color-mix(in oklab, var(--color-accent) 16%, white) 0%, color-mix(in oklab, var(--color-accent) 6%, white) 100%)'
               }}
             >
-              <node.icon weight="duotone" className="size-4 sm:size-4.5" />
+              <node.icon weight="duotone" className="size-3.5 sm:size-4.5" />
             </span>
-            <div className="card -mt-2.5 w-full pt-4 pb-2.5 px-1 shadow-xs">
-              <p className="text-[0.74rem] sm:text-[0.78rem] xl:text-[0.82rem] leading-tight font-semibold text-ink">
-                {node.title}
+            <div className="card -mt-2 sm:-mt-2.5 w-full pt-3 pb-2 sm:pt-4 sm:pb-2.5 px-1 shadow-xs">
+              <p className="text-[0.66rem] sm:text-[0.78rem] xl:text-[0.82rem] leading-tight font-semibold text-ink">
+                <span className="sm:hidden">{node.short}</span>
+                <span className="hidden sm:inline">{node.title}</span>
               </p>
-              <p className="mt-0.5 px-1 text-[0.62rem] sm:text-[0.66rem] xl:text-[0.7rem] leading-tight text-muted">
+              <p className="hidden sm:block mt-0.5 px-1 text-[0.66rem] xl:text-[0.7rem] leading-tight text-muted">
                 {node.sub}
               </p>
             </div>
@@ -224,7 +229,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
           
           {/* Left Content Column */}
-          <div className="lg:col-span-6 xl:col-span-6 order-2 lg:order-1 max-w-xl">
+          <div className="lg:col-span-6 xl:col-span-6 max-w-xl">
             {/* Eyebrow */}
             <p className="label inline-flex items-center gap-2 text-accent text-[11px] sm:text-xs">
               <span className="inline-block h-px w-6 bg-accent/60" />
@@ -274,7 +279,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Orbital Interactive Graphic */}
-          <div className="lg:col-span-6 xl:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="lg:col-span-6 xl:col-span-6 flex justify-center lg:justify-end">
             <OrbitalGraphic />
           </div>
 

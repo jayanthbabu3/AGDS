@@ -449,8 +449,12 @@ export default function TechExpertise() {
           </p>
         </div>
 
-        {/* 8 Categories Grid with Category Icons & Tech Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        {/* 8 Categories Grid with Category Icons & Tech Badges. Two columns
+            from the smallest width — eight cards fully stacked (grid-cols-1
+            below `md`) meant eight screens of scrolling. Hover shadow is now
+            a tinted lift (matching the rest of the site) instead of a flat
+            grey default. */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
           {techExpertise.categories.map((cat) => {
             const meta = CATEGORY_META[cat.name] || {
               icon: Layers,
@@ -463,33 +467,39 @@ export default function TechExpertise() {
             return (
               <div
                 key={cat.name}
-                className={`p-4 sm:p-4.5 rounded-xl bg-white border border-gray-200 shadow-xs hover:shadow-sm ${meta.hoverBorder} hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between group`}
+                className={`p-3 sm:p-4.5 rounded-xl bg-white border border-gray-200 shadow-[0_1px_2px_rgba(15,23,42,0.04)] hover:shadow-[0_10px_24px_-16px_rgba(29,78,216,0.35)] ${meta.hoverBorder} hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between group`}
               >
                 <div>
                   {/* Category Header with Icon */}
-                  <div className="flex items-center space-x-2.5 pb-2.5 mb-2.5 border-b border-gray-100">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border ${meta.iconBg}`}>
-                      <IconComponent className="w-4 h-4" />
+                  <div className="flex items-center space-x-2 sm:space-x-2.5 pb-2 sm:pb-2.5 mb-2 sm:mb-2.5 border-b border-gray-100">
+                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 border ${meta.iconBg}`}>
+                      <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                     <div>
-                      <h3 className="text-[13.5px] sm:text-[14px] font-bold text-[#111827] tracking-tight">
+                      <h3 className="text-[12.5px] sm:text-[14px] font-bold text-[#111827] tracking-tight">
                         {cat.name}
                       </h3>
-                      <span className="text-[10.5px] sm:text-[11px] font-medium text-[#5B6472]">
+                      <span className="text-[9.5px] sm:text-[11px] font-medium text-[#5B6472]">
                         {cat.technologies.length} Technologies
                       </span>
                     </div>
                   </div>
 
-                  {/* Technology Badges with Individual Icons */}
-                  <div className="flex flex-wrap gap-1.5 pt-0.5">
+                  {/* Technology Badges with Individual Icons. A fixed
+                      2-column grid, not flex-wrap — flex-wrap let each
+                      card's own label lengths decide the rhythm, so a card
+                      of short one-word items (React, Go) paired up two per
+                      row while a card of long items (Amazon Web Services,
+                      Microsoft Azure) fell to one per row: the same
+                      component reading as inconsistent card to card. */}
+                  <div className="grid grid-cols-2 gap-1 sm:gap-1.5 pt-0.5">
                     {cat.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1.5 px-2 py-1 bg-[#F9FAFB] hover:bg-white border border-gray-200/90 hover:border-gray-300 rounded-md text-[11px] sm:text-[11.5px] font-medium text-[#1F2937] shadow-2xs hover:shadow-xs transition-all duration-150"
+                        className="flex items-start gap-1 sm:gap-1.5 px-1.5 sm:px-2 py-1 bg-[#F9FAFB] hover:bg-white border border-gray-200/90 hover:border-gray-300 rounded-md text-[10px] sm:text-[11.5px] font-medium text-[#1F2937] shadow-2xs hover:shadow-xs transition-all duration-150"
                       >
                         <TechIcon name={tech} />
-                        <span>{tech}</span>
+                        <span className="leading-tight">{tech}</span>
                       </span>
                     ))}
                   </div>

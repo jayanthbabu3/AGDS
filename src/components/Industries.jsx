@@ -24,8 +24,10 @@ export default function Industries() {
           </p>
         </div>
 
-        {/* 12 Industry Grid with Subtle Real Photography */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-4.5">
+        {/* 12 Industry Grid with Subtle Real Photography. Two columns from
+            the smallest width up — twelve cards fully stacked (grid-cols-1)
+            meant twelve screens of scrolling. */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4.5">
           {industries.items.map((ind) => {
             const photoUrl = corporatePhotography.industries[ind.id];
 
@@ -36,7 +38,7 @@ export default function Industries() {
               >
                 <div>
                   {/* Real Photography Vignette */}
-                  <div className="relative h-28 sm:h-[7.5rem] w-full overflow-hidden bg-gray-100">
+                  <div className="relative h-24 sm:h-[7.5rem] w-full overflow-hidden bg-gray-100">
                     <img
                       src={photoUrl}
                       alt={`${ind.name} enterprise technology`}
@@ -48,25 +50,25 @@ export default function Industries() {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-2.5 left-3 right-3 text-white">
-                      <h3 className="text-[14.5px] sm:text-[15px] font-semibold tracking-tight text-white leading-tight">
+                    <div className="absolute bottom-2 left-2.5 right-2.5 sm:bottom-2.5 sm:left-3 sm:right-3 text-white">
+                      <h3 className="text-[12.5px] sm:text-[15px] font-semibold tracking-tight text-white leading-tight">
                         {ind.name}
                       </h3>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <div className="p-3">
-                    <p className="text-[11.5px] sm:text-[12px] text-[#5B6472] leading-relaxed line-clamp-2">
+                  <div className="p-2.5 sm:p-3">
+                    <p className="text-[10.5px] sm:text-[12px] text-[#5B6472] leading-relaxed line-clamp-2">
                       {ind.desc}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-3 pt-0 border-t border-gray-100 mt-1">
-                  <a 
-                    href="#contact" 
-                    className="inline-flex items-center text-[11px] sm:text-[11.5px] font-semibold text-[#111827] group-hover:text-[#1D4ED8] transition-colors"
+                <div className="p-2.5 sm:p-3 pt-0 border-t border-gray-100 mt-1">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center text-[10px] sm:text-[11.5px] font-semibold text-[#111827] group-hover:text-[#1D4ED8] transition-colors"
                   >
                     <span>Domain solutions</span>
                     <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
