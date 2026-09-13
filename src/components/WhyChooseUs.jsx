@@ -4,128 +4,193 @@ import {
   Layers, 
   ShieldCheck, 
   Code2, 
-  Handshake 
+  Handshake,
+  ArrowUpRight
 } from 'lucide-react';
 import { corporatePhotography } from '../data/photography';
 
 export default function WhyChooseUs() {
-  const benefits = [
-    {
-      num: '01',
-      title: 'Business-Focused Approach',
-      desc: 'Engineering decisions anchored directly in measurable business ROI, operational efficiency, and commercial outcomes.',
-      icon: Target
-    },
-    {
-      num: '02',
-      title: 'Scalable Technology',
-      desc: 'Architectures engineered to handle exponential workload growth, multi-tenant resilience, and seamless cloud scale.',
-      icon: Layers
-    },
-    {
-      num: '03',
-      title: 'Reliable Delivery',
-      desc: 'Disciplined sprint cadence, transparent milestone governance, zero-downtime deployments, and audited SLAs.',
-      icon: ShieldCheck
-    },
-    {
-      num: '04',
-      title: 'Modern Technology Expertise',
-      desc: 'Deep engineering depth across applied AI, cloud-native microservices, secure data pipelines, and modern web platforms.',
-      icon: Code2
-    },
-    {
-      num: '05',
-      title: 'Long-Term Partnership',
-      desc: 'Continuous support, proactive telemetry monitoring, and architectural evolution long after initial production deployment.',
-      icon: Handshake
-    }
-  ];
-
   return (
-    <section id="why-choose-us" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-200">
+    <section id="why-choose-us" className="py-20 lg:py-24 bg-[#F8F9FA] border-b border-gray-200">
       <div className="max-w-[1240px] xl:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
-          
-          {/* LEFT COLUMN: Large Realistic Corporate Photograph (~45% width) */}
-          <div className="lg:col-span-5 order-1">
-            <div className="relative rounded-2xl overflow-hidden border border-gray-200/90 shadow-sm bg-gray-100 group">
-              <img
-                src={corporatePhotography.whyUs.url}
-                alt="Anthropic Gen Digital Systems executive engineering consulting team collaborating in modern office"
-                className="w-full h-[380px] sm:h-[460px] lg:h-[540px] xl:h-[560px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.01]"
-                loading="lazy"
-              />
+        
+        {/* SECTION HEADER */}
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1D4ED8] mb-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+            <span>WHY CHOOSE US</span>
+          </div>
+          <h2 className="text-[26px] sm:text-[32px] lg:text-[36px] xl:text-[38px] font-semibold text-[#111827] leading-[1.18] tracking-tight">
+            Technology Solutions Built to Deliver Lasting Value
+          </h2>
+          <p className="mt-3 text-[14px] sm:text-[15.5px] text-[#5B6472] leading-relaxed max-w-2xl mx-auto">
+            We combine practical technology expertise, business understanding, and reliable delivery to build solutions aligned with real business goals.
+          </p>
+        </div>
 
-              {/* Minimal Bottom Caption Bar */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900/85 via-gray-900/40 to-transparent p-4 sm:p-5 pt-10 text-white">
-                <p className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-blue-300">
-                  Executive Technology Advisory
-                </p>
-                <p className="text-xs sm:text-[13px] text-gray-200 mt-0.5 font-medium leading-snug">
-                  Bengaluru Delivery Center &bull; High-performance sprint architecture
-                </p>
+        {/* ASYMMETRIC BENTO GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+          
+          {/* LARGE FEATURE CARD: 01 — Business-Focused Approach (Spans 5 cols on lg) */}
+          <div className="md:col-span-2 lg:col-span-5 bg-white border border-gray-200/90 rounded-2xl p-5 sm:p-6 lg:p-7 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
+            <div>
+              {/* Subtle Realistic Corporate Image inside the feature card */}
+              <div className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden mb-6 border border-gray-100 bg-gray-100">
+                <img
+                  src={corporatePhotography.whyUs.url}
+                  alt="Anthropic Gen Digital Systems engineering leadership team"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs text-[11px] font-semibold text-[#111827] shadow-xs">
+                  Strategic Advisory &bull; Bengaluru Center
+                </span>
+              </div>
+
+              {/* Card Meta Header */}
+              <div className="flex items-center justify-between mb-3.5">
+                <div className="w-10 h-10 rounded-lg bg-blue-50/80 border border-blue-100 text-[#1D4ED8] flex items-center justify-center shrink-0">
+                  <Target className="w-5 h-5 stroke-[1.75]" />
+                </div>
+                <span className="font-mono text-xs font-semibold text-[#1D4ED8] tracking-wider px-2 py-0.5 rounded bg-blue-50/60 border border-blue-100/80">
+                  01
+                </span>
+              </div>
+
+              {/* Title & Description */}
+              <h3 className="text-[17px] sm:text-[18px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                Business-Focused Approach
+              </h3>
+              <p className="mt-2 text-[13.5px] sm:text-[14px] text-[#5B6472] leading-relaxed">
+                We engineer digital solutions anchored directly in measurable business ROI, operational efficiency, and commercial outcomes rather than technology for its own sake.
+              </p>
+            </div>
+
+            {/* Bottom Footer with Indicator */}
+            <div className="pt-5 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-medium text-[#5B6472]">
+              <span className="group-hover:text-[#111827] transition-colors">Outcome-Driven Architecture</span>
+              <div className="w-7 h-7 rounded-full bg-gray-50 border border-gray-200/80 flex items-center justify-center text-gray-400 group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-200">
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Executive Header & 5 Compact Benefit Rows (~55% width) */}
-          <div className="lg:col-span-7 order-2 flex flex-col justify-center">
+          {/* RIGHT 4 MEDIUM CARDS: 2x2 Bento Subgrid (Spans 7 cols on lg) */}
+          <div className="md:col-span-2 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             
-            {/* Header Content */}
-            <div className="space-y-2.5">
-              <div className="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1D4ED8]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
-                <span>WHY CHOOSE US</span>
+            {/* 02 — Scalable Technology */}
+            <div className="bg-white border border-gray-200/90 rounded-2xl p-5 sm:p-6 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-emerald-50/80 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                    <Layers className="w-4.5 h-4.5 stroke-[1.75]" />
+                  </div>
+                  <span className="font-mono text-xs font-semibold text-emerald-600 tracking-wider px-2 py-0.5 rounded bg-emerald-50/60 border border-emerald-100/80">
+                    02
+                  </span>
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                  Scalable Technology
+                </h3>
+                <p className="mt-2 text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed">
+                  Modern modular architectures engineered for exponential traffic growth, multi-tenant resilience, and seamless cloud elasticity.
+                </p>
               </div>
 
-              <h2 className="text-[26px] sm:text-[32px] lg:text-[36px] xl:text-[38px] font-semibold text-[#111827] leading-[1.18] tracking-tight">
-                Technology Solutions Built to Deliver Lasting Value
-              </h2>
-
-              <p className="text-[14px] sm:text-[15px] text-[#5B6472] leading-relaxed max-w-xl">
-                We combine technical rigor, cloud-native architecture, and disciplined engineering execution to help enterprises build dependable digital systems that stand the test of time.
-              </p>
+              <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-medium text-[#5B6472]">
+                <span className="group-hover:text-[#111827] transition-colors">Elastic Infrastructure</span>
+                <div className="w-6 h-6 rounded-full bg-gray-50 border border-gray-200/80 flex items-center justify-center text-gray-400 group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-200">
+                  <ArrowUpRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </div>
             </div>
 
-            {/* 5 Compact Horizontal Benefit Rows with Subtle Dividers */}
-            <div className="divide-y divide-gray-200/80 border-y border-gray-200/80 mt-6 sm:mt-7">
-              {benefits.map((item) => {
-                const IconComponent = item.icon;
-
-                return (
-                  <div
-                    key={item.num}
-                    className="group py-3.5 sm:py-4 px-2 sm:px-3 -mx-2 sm:-mx-3 rounded-lg hover:bg-[#F9FAFB] transition-colors duration-150 flex items-start gap-3.5 sm:gap-4 cursor-default"
-                  >
-                    {/* Minimal Outline Icon */}
-                    <div className="w-8 h-8 rounded-md bg-white border border-gray-200/90 flex items-center justify-center shrink-0 mt-0.5 text-[#5B6472] group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-colors duration-150 shadow-2xs">
-                      <IconComponent className="w-4 h-4 stroke-[1.75] transition-transform duration-150 group-hover:translate-x-0.5" />
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-baseline space-x-2">
-                        <span className="font-mono text-xs font-semibold text-[#1D4ED8] tracking-wide">
-                          {item.num}
-                        </span>
-                        <span className="text-gray-300 text-xs">&mdash;</span>
-                        <h3 className="text-[15px] sm:text-[16px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
-                          {item.title}
-                        </h3>
-                      </div>
-                      <p className="text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed mt-1">
-                        {item.desc}
-                      </p>
-                    </div>
+            {/* 03 — Reliable Delivery */}
+            <div className="bg-white border border-gray-200/90 rounded-2xl p-5 sm:p-6 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-amber-50/80 border border-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-4.5 h-4.5 stroke-[1.75]" />
                   </div>
-                );
-              })}
+                  <span className="font-mono text-xs font-semibold text-amber-600 tracking-wider px-2 py-0.5 rounded bg-amber-50/60 border border-amber-100/80">
+                    03
+                  </span>
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                  Reliable Delivery
+                </h3>
+                <p className="mt-2 text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed">
+                  Disciplined sprint cadences, predictable milestone timelines, zero-downtime deployments, and audited enterprise SLAs.
+                </p>
+              </div>
+
+              <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-medium text-[#5B6472]">
+                <span className="group-hover:text-[#111827] transition-colors">Audited SLAs</span>
+                <div className="w-6 h-6 rounded-full bg-gray-50 border border-gray-200/80 flex items-center justify-center text-gray-400 group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-200">
+                  <ArrowUpRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </div>
+            </div>
+
+            {/* 04 — Modern Technology Expertise */}
+            <div className="bg-white border border-gray-200/90 rounded-2xl p-5 sm:p-6 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-purple-50/80 border border-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+                    <Code2 className="w-4.5 h-4.5 stroke-[1.75]" />
+                  </div>
+                  <span className="font-mono text-xs font-semibold text-purple-600 tracking-wider px-2 py-0.5 rounded bg-purple-50/60 border border-purple-100/80">
+                    04
+                  </span>
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                  Modern Technology Expertise
+                </h3>
+                <p className="mt-2 text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed">
+                  Specialized depth across applied AI, multi-cloud platforms, distributed backend systems, and modern web applications.
+                </p>
+              </div>
+
+              <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-medium text-[#5B6472]">
+                <span className="group-hover:text-[#111827] transition-colors">Applied AI & Cloud</span>
+                <div className="w-6 h-6 rounded-full bg-gray-50 border border-gray-200/80 flex items-center justify-center text-gray-400 group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-200">
+                  <ArrowUpRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </div>
+            </div>
+
+            {/* 05 — Long-Term Partnership */}
+            <div className="bg-white border border-gray-200/90 rounded-2xl p-5 sm:p-6 shadow-2xs hover:border-blue-300/80 hover:shadow-xs transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-sky-50/80 border border-sky-100 text-sky-600 flex items-center justify-center shrink-0">
+                    <Handshake className="w-4.5 h-4.5 stroke-[1.75]" />
+                  </div>
+                  <span className="font-mono text-xs font-semibold text-sky-600 tracking-wider px-2 py-0.5 rounded bg-sky-50/60 border border-sky-100/80">
+                    05
+                  </span>
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#111827] tracking-tight group-hover:text-[#1D4ED8] transition-colors leading-snug">
+                  Long-Term Partnership
+                </h3>
+                <p className="mt-2 text-[13px] sm:text-[13.5px] text-[#5B6472] leading-relaxed">
+                  Continuous engineering support, telemetry monitoring, and architectural guidance to support long-term business evolution.
+                </p>
+              </div>
+
+              <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-medium text-[#5B6472]">
+                <span className="group-hover:text-[#111827] transition-colors">Continuous Evolution</span>
+                <div className="w-6 h-6 rounded-full bg-gray-50 border border-gray-200/80 flex items-center justify-center text-gray-400 group-hover:text-[#1D4ED8] group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-200">
+                  <ArrowUpRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </div>
             </div>
 
           </div>
 
         </div>
+
       </div>
     </section>
   );
