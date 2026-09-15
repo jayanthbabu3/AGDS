@@ -20,7 +20,7 @@ export default function Contact({ preselectedService }) {
     company: '',
     email: '',
     phone: '',
-    serviceRequired: preselectedService || 'Software Development',
+    serviceRequired: preselectedService || 'Artificial Intelligence',
     projectDetails: '',
   });
 
@@ -191,7 +191,7 @@ export default function Contact({ preselectedService }) {
                         company: '',
                         email: '',
                         phone: '',
-                        serviceRequired: 'Software Development',
+                        serviceRequired: 'Artificial Intelligence',
                         projectDetails: '',
                       });
                     }}
@@ -221,7 +221,7 @@ export default function Contact({ preselectedService }) {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="e.g. Vikram Sharma"
+                      placeholder="e.g. John McCarthy"
                       required
                       className="w-full h-10 px-3.5 bg-white border border-gray-300 rounded-md text-[13.5px] text-[#111827] placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500/20 focus:border-[#1D4ED8] outline-none transition-all"
                     />
@@ -254,7 +254,7 @@ export default function Contact({ preselectedService }) {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="v.sharma@company.com"
+                      placeholder="j.mccarthy@company.com"
                       required
                       className="w-full h-10 px-3.5 bg-white border border-gray-300 rounded-md text-[13.5px] text-[#111827] placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500/20 focus:border-[#1D4ED8] outline-none transition-all"
                     />
@@ -270,7 +270,7 @@ export default function Contact({ preselectedService }) {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+91 98765 43210"
+                      placeholder="+1 123 456 7890"
                       className="w-full h-10 px-3.5 bg-white border border-gray-300 rounded-md text-[13.5px] text-[#111827] placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500/20 focus:border-[#1D4ED8] outline-none transition-all"
                     />
                   </div>

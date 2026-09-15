@@ -6,14 +6,14 @@ export const companyData = {
   headquarters: {
     addressLine1: "Outer Ring Road Tech Enclave, Bellandur",
     addressLine2: "Bengaluru, Karnataka 560103, India",
-    phone: "+91 (80) 4129-8800",
-    email: "inquiries@anthropicgendigital.com",
-    supportEmail: "enterprise-support@anthropicgendigital.com"
+    phone: "+91 733 744 8567",
+    email: "Sales@AGDSglobal.com",
+    supportEmail: "enterprise-support@agdsglobal.com"
   },
   regionalOffices: [
-    { city: "Bengaluru", state: "Karnataka", address: "Outer Ring Road Tech Enclave, Bellandur, 560103" },
-    { city: "Hyderabad", state: "Telangana", address: "HITEC City Phase II, Madhapur, 500081" },
-    { city: "Mumbai", state: "Maharashtra", address: "Bandra Kurla Complex (BKC), Bandra East, 400051" }
+    { city: "India" },
+    { city: "USA" },
+    { city: "Canada" }
   ],
   header: {
     navLinks: [
