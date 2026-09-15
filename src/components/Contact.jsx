@@ -58,7 +58,7 @@ export default function Contact({ preselectedService }) {
     if (errorMessage) setErrorMessage('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim() || !formData.projectDetails.trim()) {
       setErrorMessage('Please complete all required fields (Name, Corporate Email, and Project Details).');
@@ -66,10 +66,22 @@ export default function Contact({ preselectedService }) {
     }
 
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Submission failed');
+      }
       setSubmitted(true);
-    }, 600);
+    } catch (error) {
+      setErrorMessage('Something went wrong sending your inquiry. Please try again or email us directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
